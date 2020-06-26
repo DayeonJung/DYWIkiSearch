@@ -15,6 +15,8 @@
 		6D08C15124A5BAC300F9F055 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D08C14F24A5BAC300F9F055 /* LaunchScreen.storyboard */; };
 		6D08C15C24A5BAC300F9F055 /* SearchWikipediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D08C15B24A5BAC300F9F055 /* SearchWikipediaTests.swift */; };
 		6D08C16724A5BAC300F9F055 /* SearchWikipediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D08C16624A5BAC300F9F055 /* SearchWikipediaUITests.swift */; };
+		6D08C17624A5F3D600F9F055 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D08C17424A5F3D600F9F055 /* SearchResultCell.swift */; };
+		6D08C17724A5F3D600F9F055 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D08C17524A5F3D600F9F055 /* SearchResultCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		6D08C16224A5BAC300F9F055 /* SearchWikipediaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SearchWikipediaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D08C16624A5BAC300F9F055 /* SearchWikipediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWikipediaUITests.swift; sourceTree = "<group>"; };
 		6D08C16824A5BAC300F9F055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D08C17424A5F3D600F9F055 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		6D08C17524A5F3D600F9F055 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				6D08C14D24A5BAC300F9F055 /* Assets.xcassets */,
 				6D08C14F24A5BAC300F9F055 /* LaunchScreen.storyboard */,
 				6D08C15224A5BAC300F9F055 /* Info.plist */,
+				6D08C17424A5F3D600F9F055 /* SearchResultCell.swift */,
+				6D08C17524A5F3D600F9F055 /* SearchResultCell.xib */,
 			);
 			path = SearchWikipedia;
 			sourceTree = "<group>";
@@ -234,6 +240,7 @@
 			files = (
 				6D08C15124A5BAC300F9F055 /* LaunchScreen.storyboard in Resources */,
 				6D08C14E24A5BAC300F9F055 /* Assets.xcassets in Resources */,
+				6D08C17724A5F3D600F9F055 /* SearchResultCell.xib in Resources */,
 				6D08C14C24A5BAC200F9F055 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +268,7 @@
 			files = (
 				6D08C14924A5BAC200F9F055 /* ViewController.swift in Sources */,
 				6D08C14524A5BAC200F9F055 /* AppDelegate.swift in Sources */,
+				6D08C17624A5F3D600F9F055 /* SearchResultCell.swift in Sources */,
 				6D08C14724A5BAC200F9F055 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
