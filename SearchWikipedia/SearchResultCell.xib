@@ -17,24 +17,36 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hihi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7R-hw-Owr">
-                        <rect key="frame" x="33" y="12" width="254" height="21"/>
+                        <rect key="frame" x="36" y="12" width="251" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="bwR-m4-HL2">
+                        <rect key="frame" x="8" y="12" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="AjX-ad-erL"/>
+                            <constraint firstAttribute="width" constant="20" id="OuP-mn-diP"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="n7R-hw-Owr" secondAttribute="trailing" constant="33" id="0fj-os-uEL"/>
+                    <constraint firstItem="bwR-m4-HL2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="MuQ-aR-oTX"/>
                     <constraint firstAttribute="bottom" secondItem="n7R-hw-Owr" secondAttribute="bottom" constant="11" id="Qsd-V2-SF9"/>
                     <constraint firstItem="n7R-hw-Owr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="c0Z-Wh-bzs"/>
-                    <constraint firstItem="n7R-hw-Owr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="33" id="gvl-O5-o7r"/>
+                    <constraint firstItem="n7R-hw-Owr" firstAttribute="leading" secondItem="bwR-m4-HL2" secondAttribute="trailing" constant="8" id="iTT-Uz-quf"/>
+                    <constraint firstItem="bwR-m4-HL2" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="wUj-gm-OjI"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="lbWord" destination="n7R-hw-Owr" id="gfW-IR-0Fs"/>
             </connections>
-            <point key="canvasLocation" x="139" y="153"/>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="search" width="512" height="512"/>
+    </resources>
 </document>

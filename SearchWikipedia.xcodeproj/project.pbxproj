@@ -105,13 +105,13 @@
 			children = (
 				6D08C14424A5BAC200F9F055 /* AppDelegate.swift */,
 				6D08C14624A5BAC200F9F055 /* SceneDelegate.swift */,
-				6D08C14824A5BAC200F9F055 /* ViewController.swift */,
 				6D08C14A24A5BAC200F9F055 /* Main.storyboard */,
+				6D08C14824A5BAC200F9F055 /* ViewController.swift */,
+				6D08C17424A5F3D600F9F055 /* SearchResultCell.swift */,
+				6D08C17524A5F3D600F9F055 /* SearchResultCell.xib */,
 				6D08C14D24A5BAC300F9F055 /* Assets.xcassets */,
 				6D08C14F24A5BAC300F9F055 /* LaunchScreen.storyboard */,
 				6D08C15224A5BAC300F9F055 /* Info.plist */,
-				6D08C17424A5F3D600F9F055 /* SearchResultCell.swift */,
-				6D08C17524A5F3D600F9F055 /* SearchResultCell.xib */,
 			);
 			path = SearchWikipedia;
 			sourceTree = "<group>";

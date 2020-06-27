@@ -22,5 +22,21 @@ class SearchResultCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+ 
+    
+    func setUI(input: String, searchResult: String) {
+        
+        if searchResult.contains(input) {
+            let hilightedStr = NSMutableAttributedString(string: searchResult)
+            
+            hilightedStr.addAttributes([.font:UIFont.systemFont(ofSize: 17), .foregroundColor: UIColor.orange],
+                                         range: (searchResult as NSString).range(of: input))
+            
+            self.lbWord.attributedText = hilightedStr
+        } else {
+            self.lbWord.text = searchResult
+        }
+        
+    }
     
 }

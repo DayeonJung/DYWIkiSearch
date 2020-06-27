@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     let searchController = UISearchController(searchResultsController: nil)
 
     var searchResults: [String] = []
+    var input: String = ""
     
     @IBOutlet weak var tableview: UITableView!
     
@@ -81,8 +82,8 @@ extension ViewController: UISearchResultsUpdating {
 
     func updateSearchResults(for searchController: UISearchController) {
 
-        let text = searchController.searchBar.text ?? ""
-        self.search(word: text) { (results, error) in
+        self.input = searchController.searchBar.text ?? ""
+        self.search(word: self.input) { (results, error) in
             if let errorMessage = error {
                 print("위키피디아 검색을 실패했습니다.\n" + errorMessage)
             } else {
@@ -109,11 +110,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath) as! SearchResultCell
-        cell.lbWord.text = self.searchResults[indexPath.row]
+        
+        cell.setUI(input: self.input, searchResult: self.searchResults[indexPath.row])
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "최근 검색 기록"
+    }
     
     
 }
