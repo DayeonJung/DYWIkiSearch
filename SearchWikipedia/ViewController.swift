@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RealmSwift
+
 
 class ViewController: UIViewController {
     
@@ -25,6 +27,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         self.searchController.searchResultsUpdater = self
+        self.searchController.searchBar.delegate = self
         self.searchController.obscuresBackgroundDuringPresentation = false
         self.searchController.searchBar.placeholder = "검색어를 입력하세요."
         self.navigationItem.searchController = self.searchController
@@ -87,9 +90,14 @@ extension ViewController: UISearchResultsUpdating {
             if let errorMessage = error {
                 print("위키피디아 검색을 실패했습니다.\n" + errorMessage)
             } else {
-                guard let searchResults = results else { return }
+                guard let searchResults = results else {
+                    DispatchQueue.main.async {
+                        self.tableview.reloadData()
+                    }
+                    return
+                }
+                
                 self.searchResults = searchResults
-
                 DispatchQueue.main.async {
                     self.tableview.reloadData()
                 }
@@ -101,23 +109,66 @@ extension ViewController: UISearchResultsUpdating {
     
 }
 
+extension ViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        if let text = searchBar.text, text.count > 0 {
+            let record = SearchRecordModel()
+            record.date = Date()
+            record.searchingWord = text
+            
+            DispatchQueue.main.async {
+                autoreleasepool {
+                    let realm = try! Realm()
+                    try! realm.write {
+                        realm.add(record)
+                    }
+                }
+            }
+
+        }
+        
+        
+        
+    }
+    
+}
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if self.input == "" {
+            let realm = try! Realm()
+            let results = realm.objects(SearchRecordModel.self)
+            
+            return results.count
+        }
+        
         return self.searchResults.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath) as! SearchResultCell
         
-        cell.setUI(input: self.input, searchResult: self.searchResults[indexPath.row])
-        
+        if self.input == "" {
+            let realm = try! Realm()
+            let results = realm.objects(SearchRecordModel.self)
+            cell.setRecentSearchingRecordUI(record: results[indexPath.row])
+        }
+        else {
+            cell.setSearchingResultUI(input: self.input, searchResult: self.searchResults[indexPath.row])
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "최근 검색 기록"
+        
+        return self.input == "" ? "최근 검색 기록" : nil
+        
     }
     
     

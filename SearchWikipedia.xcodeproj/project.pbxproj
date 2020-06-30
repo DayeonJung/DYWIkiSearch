@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,10 @@
 		6D08C16724A5BAC300F9F055 /* SearchWikipediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D08C16624A5BAC300F9F055 /* SearchWikipediaUITests.swift */; };
 		6D08C17624A5F3D600F9F055 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D08C17424A5F3D600F9F055 /* SearchResultCell.swift */; };
 		6D08C17724A5F3D600F9F055 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D08C17524A5F3D600F9F055 /* SearchResultCell.xib */; };
+		6D79E94B24AB2D960027A805 /* SearchRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D79E94A24AB2D960027A805 /* SearchRecordModel.swift */; };
+		991E71E8259F37102AF97610 /* Pods_SearchWikipediaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 758D8D11F122E2032E054C4B /* Pods_SearchWikipediaTests.framework */; };
+		ED39525E8FBDCE77D98BAC64 /* Pods_SearchWikipedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BCFA514322E0033146520C9 /* Pods_SearchWikipedia.framework */; };
+		EFF7946A0AC6A1A6A4F9501C /* Pods_SearchWikipedia_SearchWikipediaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBF6D24E6111212CBC18889 /* Pods_SearchWikipedia_SearchWikipediaUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2BCFA514322E0033146520C9 /* Pods_SearchWikipedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchWikipedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37C23BD1620979BE040D83D8 /* Pods-SearchWikipediaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchWikipediaTests.release.xcconfig"; path = "Target Support Files/Pods-SearchWikipediaTests/Pods-SearchWikipediaTests.release.xcconfig"; sourceTree = "<group>"; };
+		3E869838C28DF484B9D84872 /* Pods-SearchWikipedia-SearchWikipediaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchWikipedia-SearchWikipediaUITests.release.xcconfig"; path = "Target Support Files/Pods-SearchWikipedia-SearchWikipediaUITests/Pods-SearchWikipedia-SearchWikipediaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		61C6D0718A26EE011FF8E113 /* Pods-SearchWikipedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchWikipedia.release.xcconfig"; path = "Target Support Files/Pods-SearchWikipedia/Pods-SearchWikipedia.release.xcconfig"; sourceTree = "<group>"; };
 		6D08C14124A5BAC200F9F055 /* SearchWikipedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchWikipedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D08C14424A5BAC200F9F055 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D08C14624A5BAC200F9F055 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +61,12 @@
 		6D08C16824A5BAC300F9F055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D08C17424A5F3D600F9F055 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		6D08C17524A5F3D600F9F055 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		6D79E94A24AB2D960027A805 /* SearchRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecordModel.swift; sourceTree = "<group>"; };
+		758D8D11F122E2032E054C4B /* Pods_SearchWikipediaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchWikipediaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BBF6D24E6111212CBC18889 /* Pods_SearchWikipedia_SearchWikipediaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchWikipedia_SearchWikipediaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D4292D7E6DDE399BC10A837 /* Pods-SearchWikipedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchWikipedia.debug.xcconfig"; path = "Target Support Files/Pods-SearchWikipedia/Pods-SearchWikipedia.debug.xcconfig"; sourceTree = "<group>"; };
+		BEB4DE71AB57541FC486E60B /* Pods-SearchWikipedia-SearchWikipediaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchWikipedia-SearchWikipediaUITests.debug.xcconfig"; path = "Target Support Files/Pods-SearchWikipedia-SearchWikipediaUITests/Pods-SearchWikipedia-SearchWikipediaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E7808DDB6B1AF72362F35DD7 /* Pods-SearchWikipediaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchWikipediaTests.debug.xcconfig"; path = "Target Support Files/Pods-SearchWikipediaTests/Pods-SearchWikipediaTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED39525E8FBDCE77D98BAC64 /* Pods_SearchWikipedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				991E71E8259F37102AF97610 /* Pods_SearchWikipediaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +90,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFF7946A0AC6A1A6A4F9501C /* Pods_SearchWikipedia_SearchWikipediaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		285B0DEF05162C4CE811A846 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7D4292D7E6DDE399BC10A837 /* Pods-SearchWikipedia.debug.xcconfig */,
+				61C6D0718A26EE011FF8E113 /* Pods-SearchWikipedia.release.xcconfig */,
+				BEB4DE71AB57541FC486E60B /* Pods-SearchWikipedia-SearchWikipediaUITests.debug.xcconfig */,
+				3E869838C28DF484B9D84872 /* Pods-SearchWikipedia-SearchWikipediaUITests.release.xcconfig */,
+				E7808DDB6B1AF72362F35DD7 /* Pods-SearchWikipediaTests.debug.xcconfig */,
+				37C23BD1620979BE040D83D8 /* Pods-SearchWikipediaTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		35D3451F2025B971A9375CEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2BCFA514322E0033146520C9 /* Pods_SearchWikipedia.framework */,
+				7BBF6D24E6111212CBC18889 /* Pods_SearchWikipedia_SearchWikipediaUITests.framework */,
+				758D8D11F122E2032E054C4B /* Pods_SearchWikipediaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6D08C13824A5BAC200F9F055 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +127,8 @@
 				6D08C15A24A5BAC300F9F055 /* SearchWikipediaTests */,
 				6D08C16524A5BAC300F9F055 /* SearchWikipediaUITests */,
 				6D08C14224A5BAC200F9F055 /* Products */,
+				285B0DEF05162C4CE811A846 /* Pods */,
+				35D3451F2025B971A9375CEC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +148,7 @@
 				6D08C14424A5BAC200F9F055 /* AppDelegate.swift */,
 				6D08C14624A5BAC200F9F055 /* SceneDelegate.swift */,
 				6D08C14A24A5BAC200F9F055 /* Main.storyboard */,
+				6D79E94A24AB2D960027A805 /* SearchRecordModel.swift */,
 				6D08C14824A5BAC200F9F055 /* ViewController.swift */,
 				6D08C17424A5F3D600F9F055 /* SearchResultCell.swift */,
 				6D08C17524A5F3D600F9F055 /* SearchResultCell.xib */,
@@ -141,9 +184,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6D08C16B24A5BAC300F9F055 /* Build configuration list for PBXNativeTarget "SearchWikipedia" */;
 			buildPhases = (
+				991E4C4CF3BF3FE05FF8D691 /* [CP] Check Pods Manifest.lock */,
 				6D08C13D24A5BAC200F9F055 /* Sources */,
 				6D08C13E24A5BAC200F9F055 /* Frameworks */,
 				6D08C13F24A5BAC200F9F055 /* Resources */,
+				217DE7BEFAC64BC391053D89 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -158,6 +203,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6D08C16E24A5BAC300F9F055 /* Build configuration list for PBXNativeTarget "SearchWikipediaTests" */;
 			buildPhases = (
+				C9F7AED2C1C05B7EC62F081F /* [CP] Check Pods Manifest.lock */,
 				6D08C15324A5BAC300F9F055 /* Sources */,
 				6D08C15424A5BAC300F9F055 /* Frameworks */,
 				6D08C15524A5BAC300F9F055 /* Resources */,
@@ -176,9 +222,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6D08C17124A5BAC300F9F055 /* Build configuration list for PBXNativeTarget "SearchWikipediaUITests" */;
 			buildPhases = (
+				BB9E838C2FEEE584917020D9 /* [CP] Check Pods Manifest.lock */,
 				6D08C15E24A5BAC300F9F055 /* Sources */,
 				6D08C15F24A5BAC300F9F055 /* Frameworks */,
 				6D08C16024A5BAC300F9F055 /* Resources */,
+				42BC5AA78D14C7A914439E5B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -261,12 +309,116 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		217DE7BEFAC64BC391053D89 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SearchWikipedia/Pods-SearchWikipedia-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SearchWikipedia/Pods-SearchWikipedia-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SearchWikipedia/Pods-SearchWikipedia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42BC5AA78D14C7A914439E5B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SearchWikipedia-SearchWikipediaUITests/Pods-SearchWikipedia-SearchWikipediaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SearchWikipedia-SearchWikipediaUITests/Pods-SearchWikipedia-SearchWikipediaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SearchWikipedia-SearchWikipediaUITests/Pods-SearchWikipedia-SearchWikipediaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		991E4C4CF3BF3FE05FF8D691 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SearchWikipedia-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB9E838C2FEEE584917020D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SearchWikipedia-SearchWikipediaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9F7AED2C1C05B7EC62F081F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SearchWikipediaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6D08C13D24A5BAC200F9F055 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6D08C14924A5BAC200F9F055 /* ViewController.swift in Sources */,
+				6D79E94B24AB2D960027A805 /* SearchRecordModel.swift in Sources */,
 				6D08C14524A5BAC200F9F055 /* AppDelegate.swift in Sources */,
 				6D08C17624A5F3D600F9F055 /* SearchResultCell.swift in Sources */,
 				6D08C14724A5BAC200F9F055 /* SceneDelegate.swift in Sources */,
@@ -440,6 +592,7 @@
 		};
 		6D08C16C24A5BAC300F9F055 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D4292D7E6DDE399BC10A837 /* Pods-SearchWikipedia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -458,6 +611,7 @@
 		};
 		6D08C16D24A5BAC300F9F055 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61C6D0718A26EE011FF8E113 /* Pods-SearchWikipedia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -476,6 +630,7 @@
 		};
 		6D08C16F24A5BAC300F9F055 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7808DDB6B1AF72362F35DD7 /* Pods-SearchWikipediaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -498,6 +653,7 @@
 		};
 		6D08C17024A5BAC300F9F055 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37C23BD1620979BE040D83D8 /* Pods-SearchWikipediaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -520,6 +676,7 @@
 		};
 		6D08C17224A5BAC300F9F055 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEB4DE71AB57541FC486E60B /* Pods-SearchWikipedia-SearchWikipediaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -540,6 +697,7 @@
 		};
 		6D08C17324A5BAC300F9F055 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E869838C28DF484B9D84872 /* Pods-SearchWikipedia-SearchWikipediaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

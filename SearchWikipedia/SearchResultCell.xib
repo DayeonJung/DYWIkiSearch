@@ -16,8 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hihi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7R-hw-Owr">
-                        <rect key="frame" x="36" y="12" width="251" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="search result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7R-hw-Owr">
+                        <rect key="frame" x="36" y="11.5" width="180" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -29,24 +29,44 @@
                             <constraint firstAttribute="width" constant="20" id="OuP-mn-diP"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIK-qb-pEp">
+                        <rect key="frame" x="292" y="12" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="IdJ-a9-5Te"/>
+                            <constraint firstAttribute="width" constant="20" id="ywk-oY-hCW"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="delete"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="2020.12.31" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdM-yc-eIG">
+                        <rect key="frame" x="224" y="14.5" width="60" height="15"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="n7R-hw-Owr" secondAttribute="trailing" constant="33" id="0fj-os-uEL"/>
+                    <constraint firstItem="n7R-hw-Owr" firstAttribute="centerY" secondItem="bwR-m4-HL2" secondAttribute="centerY" id="6Ga-bJ-uJa"/>
+                    <constraint firstItem="UdM-yc-eIG" firstAttribute="centerY" secondItem="ZIK-qb-pEp" secondAttribute="centerY" id="6f6-ot-aX9"/>
                     <constraint firstItem="bwR-m4-HL2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="MuQ-aR-oTX"/>
-                    <constraint firstAttribute="bottom" secondItem="n7R-hw-Owr" secondAttribute="bottom" constant="11" id="Qsd-V2-SF9"/>
-                    <constraint firstItem="n7R-hw-Owr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="c0Z-Wh-bzs"/>
+                    <constraint firstItem="ZIK-qb-pEp" firstAttribute="centerY" secondItem="bwR-m4-HL2" secondAttribute="centerY" id="Pha-HV-BQ5"/>
+                    <constraint firstItem="ZIK-qb-pEp" firstAttribute="leading" secondItem="UdM-yc-eIG" secondAttribute="trailing" constant="8" id="WkX-uo-cJA"/>
+                    <constraint firstItem="UdM-yc-eIG" firstAttribute="leading" secondItem="n7R-hw-Owr" secondAttribute="trailing" constant="8" id="X61-Rc-rw2"/>
+                    <constraint firstAttribute="trailing" secondItem="ZIK-qb-pEp" secondAttribute="trailing" constant="8" id="cZz-Fa-tY1"/>
                     <constraint firstItem="n7R-hw-Owr" firstAttribute="leading" secondItem="bwR-m4-HL2" secondAttribute="trailing" constant="8" id="iTT-Uz-quf"/>
                     <constraint firstItem="bwR-m4-HL2" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="wUj-gm-OjI"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="btnRight" destination="ZIK-qb-pEp" id="9WZ-60-93A"/>
+                <outlet property="lbDate" destination="UdM-yc-eIG" id="VBS-sz-ULi"/>
                 <outlet property="lbWord" destination="n7R-hw-Owr" id="gfW-IR-0Fs"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="delete" width="512" height="512"/>
         <image name="search" width="512" height="512"/>
     </resources>
 </document>

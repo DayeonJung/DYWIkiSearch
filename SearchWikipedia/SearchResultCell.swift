@@ -11,6 +11,8 @@ import UIKit
 class SearchResultCell: UITableViewCell {
 
     @IBOutlet weak var lbWord: UILabel!
+    @IBOutlet weak var lbDate: UILabel!
+    @IBOutlet weak var btnRight: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,7 +26,9 @@ class SearchResultCell: UITableViewCell {
     }
  
     
-    func setUI(input: String, searchResult: String) {
+    
+    func setSearchingResultUI(input: String, searchResult: String) {
+        self.lbDate.isHidden = true
         
         if searchResult.contains(input) {
             let hilightedStr = NSMutableAttributedString(string: searchResult)
@@ -38,5 +42,18 @@ class SearchResultCell: UITableViewCell {
         }
         
     }
+    
+    
+    func setRecentSearchingRecordUI(record: SearchRecordModel) {
+        self.lbDate.isHidden = false
+
+        self.lbWord.text = record.searchingWord
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yy.MM.dd HH:mm"
+        
+        self.lbDate.text = dateFormatter.string(from: record.date)
+    }
+    
     
 }
