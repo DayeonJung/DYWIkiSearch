@@ -12,7 +12,9 @@ import RealmSwift
 
 class ViewController: UIViewController {
     
-    
+    private var realm: Realm!
+    private var results: Results<SearchRecordModel>!
+
     let session: URLSession = URLSession.shared
     
     let searchController = UISearchController(searchResultsController: nil)
@@ -26,24 +28,39 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        self.tableview.register(UINib(nibName: "SearchResultCell", bundle: nil), forCellReuseIdentifier: "SearchResultCell")
+        
+        self.setSearchViewController()
+        self.setDB()
+    }
+
+
+    func setSearchViewController() {
         self.searchController.searchResultsUpdater = self
         self.searchController.searchBar.delegate = self
         self.searchController.obscuresBackgroundDuringPresentation = false
         self.searchController.searchBar.placeholder = "검색어를 입력하세요."
         self.navigationItem.searchController = self.searchController
-
-        self.tableview.register(UINib(nibName: "SearchResultCell", bundle: nil), forCellReuseIdentifier: "SearchResultCell")
-
     }
-
-
+    
+    
+    func setDB() {
+        do {
+            self.realm = try Realm()
+        } catch {
+            print("\(error)")
+        }
+        
+        self.results = self.realm.objects(SearchRecordModel.self)
+    }
+    
     
     func search(word: String, completion: @escaping (Array<String>?, String?) -> Void) {
         
         var paramDic: [String: String] = [:]
         paramDic["action"] = "opensearch"
         paramDic["namespace"] = "0"
-        paramDic["limit"] = "10"
+        paramDic["limit"] = "100"
         paramDic["format"] = "json"
         
         paramDic["search"] = word
@@ -76,6 +93,21 @@ class ViewController: UIViewController {
         }.resume()
     }
     
+    
+    func saveSearchingResult(_ text: String) {
+        let record = SearchRecordModel()
+        record.date = Date()
+        record.searchingWord = text
+        
+        DispatchQueue.main.async {
+            autoreleasepool {
+                try! self.realm.write {
+                    self.realm.add(record)
+                }
+            }
+        }
+        
+    }
     
 }
 
@@ -114,22 +146,8 @@ extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         if let text = searchBar.text, text.count > 0 {
-            let record = SearchRecordModel()
-            record.date = Date()
-            record.searchingWord = text
-            
-            DispatchQueue.main.async {
-                autoreleasepool {
-                    let realm = try! Realm()
-                    try! realm.write {
-                        realm.add(record)
-                    }
-                }
-            }
-
+            self.saveSearchingResult(text)
         }
-        
-        
         
     }
     
@@ -141,10 +159,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if self.input == "" {
-            let realm = try! Realm()
-            let results = realm.objects(SearchRecordModel.self)
-            
-            return results.count
+            return results.count > 10 ? 10 : results.count
         }
         
         return self.searchResults.count
@@ -152,22 +167,47 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath) as! SearchResultCell
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath) as! SearchResultCell
+
+        let sortedResults = self.results.sorted(byKeyPath: "date", ascending: false)
+
         if self.input == "" {
-            let realm = try! Realm()
-            let results = realm.objects(SearchRecordModel.self)
-            cell.setRecentSearchingRecordUI(record: results[indexPath.row])
+            cell.setRecentSearchingRecordUI(record: sortedResults[indexPath.row])
         }
         else {
             cell.setSearchingResultUI(input: self.input, searchResult: self.searchResults[indexPath.row])
         }
+        
+        cell.btnRight.onClick = {
+            if self.input == "" {
+                try! self.realm.write {
+                    let selected = sortedResults[indexPath.row]
+                    self.realm.delete(selected)
+                    self.tableview.reloadData()
+                }
+            } else {
+                self.saveSearchingResult(self.searchResults[indexPath.row])
+            }
+        }
+        
         return cell
     }
+    
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         return self.input == "" ? "최근 검색 기록" : nil
+        
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if self.input == "" {
+            let sortedResults = self.results.sorted(byKeyPath: "date", ascending: false)
+            self.searchController.searchBar.text = sortedResults[indexPath.row].searchingWord
+        }
         
     }
     

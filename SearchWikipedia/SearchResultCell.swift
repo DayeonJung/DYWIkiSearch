@@ -12,7 +12,7 @@ class SearchResultCell: UITableViewCell {
 
     @IBOutlet weak var lbWord: UILabel!
     @IBOutlet weak var lbDate: UILabel!
-    @IBOutlet weak var btnRight: UIButton!
+    @IBOutlet weak var btnRight: WikiButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,19 +28,24 @@ class SearchResultCell: UITableViewCell {
     
     
     func setSearchingResultUI(input: String, searchResult: String) {
+        
+        let lowerResult = searchResult.lowercased()
+        let lowerInput = input.lowercased()
+        
         self.lbDate.isHidden = true
         
-        if searchResult.contains(input) {
+        if lowerResult.contains(lowerInput) {
             let hilightedStr = NSMutableAttributedString(string: searchResult)
             
             hilightedStr.addAttributes([.font:UIFont.systemFont(ofSize: 17), .foregroundColor: UIColor.orange],
-                                         range: (searchResult as NSString).range(of: input))
+                                       range: (lowerResult as NSString).range(of: lowerInput))
             
             self.lbWord.attributedText = hilightedStr
         } else {
             self.lbWord.text = searchResult
         }
         
+        self.btnRight.setImage(UIImage(named: "record"), for: .normal)
     }
     
     
@@ -53,6 +58,9 @@ class SearchResultCell: UITableViewCell {
         dateFormatter.dateFormat = "yy.MM.dd HH:mm"
         
         self.lbDate.text = dateFormatter.string(from: record.date)
+        
+        self.btnRight.setImage(UIImage(named: "delete"), for: .normal)
+
     }
     
     
