@@ -15,7 +15,7 @@ class SearchRecordModel : Object {
     @objc dynamic var searchingWord = ""
     
 
-    required init() {
+    required override init() {
 
     }
     

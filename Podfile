@@ -7,7 +7,7 @@ target 'SearchWikipedia' do
 
   # Pods for SearchWikipedia
 
-  pod 'RealmSwift'
+  pod 'RealmSwift', '~>10'
   
   target 'SearchWikipediaTests' do
     inherit! :search_paths
